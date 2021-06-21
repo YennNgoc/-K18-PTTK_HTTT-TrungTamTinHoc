@@ -157,7 +157,8 @@ CREATE TABLE [Lop]
 	[NgayMo] date NOT NULL,
 	[Soluong] int NOT NULL DEFAULT 20,
 	[MaMH] char(8) NOT NULL,
-	[MaNV] char(8) NULL
+	[MaNV] char(8) NULL,
+	[HocPhi] money NULL,
 )
 GO
 
