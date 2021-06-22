@@ -1,18 +1,6 @@
 ﻿use [TT_TinHoc]
 go
 
-select * from HoaDon
-select * from HocVien
-select * from NhanVien
-select * from LichSuThi
-select * from LichSuTotNghiep
-select * from Lop
-select * from MonHoc
-select * from NhomMonHoc
-select * from ChungChi
-select * from DangKy
-go
-
 
 	-- note: cac proc tra cuu diem su dung func tbDiem o file KhaoThi_func.sql
 	-- a) procTraCuuDiem: tra cuu tat ca diem
@@ -171,25 +159,6 @@ begin
 end
 go
 --exec ChinhSuaThongTin HV000014, 'glugluglu', '02613455040', 'ngaanlee2112@gmail.com', '0903043089', '2000-11-20'
---go
-
------------------------------------------------------------------------------------------------------------------------------------
-	
-	-- func tbLopMo: tra ve ds lop mo theo lop
-create function tbLopMo
-(
-	@malh char(8)
-)
-returns table
-as
-return
-	select * from Lop where MaLop = @malh
-go
-
---select * from tbLopMo('LOP00056')
---go
-
---drop function tbLopMo
 --go
 
 -----------------------------------------------------------------------------------------------------------------------------------
