@@ -17,7 +17,7 @@ return
 	where ls.MaHV = @mahv
 go
 
---select * from tbDiem('HV000014')
+--select * from tbDiem('HV000004')
 --go
 
 --drop function tbDiem

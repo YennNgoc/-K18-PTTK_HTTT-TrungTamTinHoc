@@ -130,10 +130,10 @@ create or alter proc TraCuuThongTin
 	@mahv char(8)
 as
 begin
-	select * from HocVien where MaHV = @mahv
+	select top 1 * from HocVien where MaHV = @mahv
 end
 go
---exec TraCuuThongTin HV000014
+--exec TraCuuThongTin HV000004
 --go
 
 -----------------------------------------------------------------------------------------------------------------------------------
@@ -142,6 +142,7 @@ go
 	-- note: hoc vien khong the sua ho ten va ma hoc vien
 create or alter proc ChinhSuaThongTin
 	@mahv char(8),
+	@hoten nvarchar(50),
 	@pw varchar(20),
 	@cccd char(12),
 	@email varchar(50),
@@ -149,16 +150,16 @@ create or alter proc ChinhSuaThongTin
 	@ngaysinh date
 as
 begin
-	exec TraCuuThongTin @mahv
+	--exec TraCuuThongTin @mahv
 
 	update HocVien
-	set Password = @pw, CCCD = @cccd, Email = @email, SDT = @sdt, NgaySinh = @ngaysinh
+	set HoTen=@hoten, Password = @pw, CCCD = @cccd, Email = @email, SDT = @sdt, NgaySinh = @ngaysinh
 	where MaHV = @mahv
 
 	select * from HocVien where MaHV = @mahv
 end
 go
---exec ChinhSuaThongTin HV000014, 'glugluglu', '02613455040', 'ngaanlee2112@gmail.com', '0903043089', '2000-11-20'
+--exec ChinhSuaThongTin HV000004, 'Scottie Antliff','Hocvien04', '02613455040', 'santliff3@timesonline.co.uk', '0903043089', '2000-11-20'
 --go
 
 -----------------------------------------------------------------------------------------------------------------------------------
@@ -184,7 +185,28 @@ begin
 end
 go
 
---exec TraCuuDSLopMo 'LOP00001'
+create or alter proc TraCuuDSLopMo
+	@mahk char(4)
+as
+begin
+	if exists (select * from Lop where left(MaLop, 4) = @mahk)
+	begin
+		declare @ngaymodk date
+		set @ngaymodk = (select max(NgayMo) from Lop where left(MaLop, 4) = @mahk)
+
+		if (cast(GETDATE() as date) > DATEADD(day, 7, @ngaymodk))
+			raiserror (N'Đã hết hạn đăng ký học phần!', 16, 1)
+		else
+			select * from Lop where left(MaLop, 4) = @mahk
+	end
+	else
+	begin
+		raiserror (N'Sai mã học kỳ!', 16, 1)
+	end
+end
+go
+
+--exec TraCuuDSLopMo '2101'
 --go
 
 -----------------------------------------------------------------------------------------------------------------------------------
@@ -228,9 +250,9 @@ begin
 	if exists (select * from LichSuTotNghiep where MaHV = @mahv)
 		select * from LichSuTotNghiep where MaHV = @mahv
 	else 
-		print ('Ket qua khong ton tai!')
+		raiserror ('Khong co ket qua phu hop!',16,1)
 end
 go
-exec TraCuuLSTN 'HV000001'
-go
+--exec TraCuuLSTN 'HV000004'
+--go
 

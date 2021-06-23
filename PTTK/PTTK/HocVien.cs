@@ -23,21 +23,21 @@ namespace PTTK
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "select * from HocVien";
-            cmd.ExecuteNonQuery();
-            SqlDataAdapter da = new SqlDataAdapter();
-            da.SelectCommand = cmd;
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            gridHV.DataSource = dt;
-            checked_DK.Visible = false;
+            Update_InfoHV fr = new Update_InfoHV();
+            fr.Show();
+
         }
 
         private void lịchSửThiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "select * from LichSuThi";
+            cmd.CommandText = "TraCuuDiem_HV";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@mahv", SqlDbType.Char, 8).Value = Account.username;
+            //SqlParameter returnParameter = cmd.Parameters.Add("@role", SqlDbType.VarChar, 20);
+            //returnParameter.Direction = ParameterDirection.Output;
+
             cmd.ExecuteNonQuery();
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = cmd;
@@ -50,14 +50,26 @@ namespace PTTK
         private void chứngChỉToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "select * from LichSuTotNghiep";
-            cmd.ExecuteNonQuery();
-            SqlDataAdapter da = new SqlDataAdapter();
-            da.SelectCommand = cmd;
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            gridHV.DataSource = dt;
-            checked_DK.Visible = false;
+            cmd.CommandText = "TraCuuLSTN";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@mahv", SqlDbType.Char, 8).Value = Account.username;
+            try {
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                gridHV.DataSource = dt;
+                checked_DK.Visible = false;
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+
+
         }
 
         private void danhSáchLớpMởToolStripMenuItem_Click(object sender, EventArgs e)
@@ -76,7 +88,14 @@ namespace PTTK
         private void đăngKýHọcPhầnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "select * from Lop";cmd.ExecuteNonQuery();
+            cmd.CommandText = "select * from Lop";
+            //cmd.CommandText = "DKHP";
+            //cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.Add("@mahv", SqlDbType.Char, 8).Value = textBox1.Text;
+            //cmd.Parameters.Add("@pw", SqlDbType.VarChar, 20).Value = textBox2.Text;
+
+            cmd.ExecuteNonQuery();
+            
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = cmd;
             DataTable dt = new DataTable();

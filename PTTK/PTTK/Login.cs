@@ -35,19 +35,25 @@ namespace PTTK
             {
                 con.Open();
                 MessageBox.Show(Account.username + " Connected!", "Login Notify");
-                if (Account.username.Contains("HV"))
+                if (Account.username.Contains("QLHV"))
                 {
-                    HocVien fr = new HocVien();
+                    NVQL_HocVien fr = new NVQL_HocVien();
                     fr.Show();
                     this.Hide();
                 }
-                else
-                    if (Account.username.Contains("QLLH"))
+                else if (Account.username.Contains("QLLH"))
                 {
                     NVQL__LopHoc fr = new NVQL__LopHoc();
                     fr.Show();
                     this.Hide();
                 }
+                else if (Account.username.Contains("HV"))
+                {
+                    HocVien fr = new HocVien();
+                    fr.Show();
+                    this.Hide();
+                }
+
                 //MessageBox.Show("Connected", "Login Notify");
             }
             catch (SqlException)

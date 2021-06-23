@@ -64,8 +64,32 @@
     <Compile Include="NVQL _LopHoc.Designer.cs">
       <DependentUpon>NVQL _LopHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="NVQL_HocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NVQL_HocVien.Designer.cs">
+      <DependentUpon>NVQL_HocVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhongKhaoThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhongKhaoThi.Designer.cs">
+      <DependentUpon>PhongKhaoThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThuNgan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThuNgan.Designer.cs">
+      <DependentUpon>ThuNgan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Update_InfoHV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update_InfoHV.Designer.cs">
+      <DependentUpon>Update_InfoHV.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="HocVien.resx">
       <DependentUpon>HocVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +98,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NVQL _LopHoc.resx">
       <DependentUpon>NVQL _LopHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NVQL_HocVien.resx">
+      <DependentUpon>NVQL_HocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhongKhaoThi.resx">
+      <DependentUpon>PhongKhaoThi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,6 +114,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ThuNgan.resx">
+      <DependentUpon>ThuNgan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update_InfoHV.resx">
+      <DependentUpon>Update_InfoHV.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -134,6 +134,7 @@
             this.but_TraCuuHV.TabIndex = 6;
             this.but_TraCuuHV.Text = "Tra cuu Hoc vien";
             this.but_TraCuuHV.UseVisualStyleBackColor = true;
+            this.but_TraCuuHV.Click += new System.EventHandler(this.but_TraCuuHV_Click);
             // 
             // NVQL_HocVien
             // 

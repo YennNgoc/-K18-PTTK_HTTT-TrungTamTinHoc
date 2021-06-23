@@ -20,5 +20,15 @@ namespace PTTK
             con.Open();
         }
 
+        private void but_TraCuuHV_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tb_MaHV.Text) )
+            {
+                MessageBox.Show("Vui long cung cap MaHV");
+                return;
+            }
+            Update_InfoHV fr = new Update_InfoHV(tb_MaHV.Text);
+            fr.Show();
+        }
     }
 }
