@@ -50,6 +50,7 @@
             // 
             this.menuStripHV.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.menuStripHV.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.menuStripHV.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStripHV.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStripHV.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
@@ -127,21 +128,21 @@
             // danhSáchLớpMởToolStripMenuItem
             // 
             this.danhSáchLớpMởToolStripMenuItem.Name = "danhSáchLớpMởToolStripMenuItem";
-            this.danhSáchLớpMởToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.danhSáchLớpMởToolStripMenuItem.Size = new System.Drawing.Size(263, 34);
             this.danhSáchLớpMởToolStripMenuItem.Text = "Danh sach Lop mo";
             this.danhSáchLớpMởToolStripMenuItem.Click += new System.EventHandler(this.danhSáchLớpMởToolStripMenuItem_Click);
             // 
             // đăngKýHọcPhầnToolStripMenuItem
             // 
             this.đăngKýHọcPhầnToolStripMenuItem.Name = "đăngKýHọcPhầnToolStripMenuItem";
-            this.đăngKýHọcPhầnToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.đăngKýHọcPhầnToolStripMenuItem.Size = new System.Drawing.Size(263, 34);
             this.đăngKýHọcPhầnToolStripMenuItem.Text = "Dang ky Hoc phan";
             this.đăngKýHọcPhầnToolStripMenuItem.Click += new System.EventHandler(this.đăngKýHọcPhầnToolStripMenuItem_Click);
             // 
             // kếtQuảĐăngKýToolStripMenuItem
             // 
             this.kếtQuảĐăngKýToolStripMenuItem.Name = "kếtQuảĐăngKýToolStripMenuItem";
-            this.kếtQuảĐăngKýToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.kếtQuảĐăngKýToolStripMenuItem.Size = new System.Drawing.Size(263, 34);
             this.kếtQuảĐăngKýToolStripMenuItem.Text = "Ket qua Dang ky";
             this.kếtQuảĐăngKýToolStripMenuItem.Click += new System.EventHandler(this.kếtQuảĐăngKýToolStripMenuItem_Click);
             // 
