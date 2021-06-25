@@ -3,9 +3,20 @@
 /*  Created On : 19-Jun-2021 4:45:15 PM 				*/
 /*  DBMS       : SQL Server 2012 						*/
 /* ---------------------------------------------------- */
---CREATE DATABASE TT_TinHoc
+
+USE MASTER
+GO
+
+IF DB_ID('TT_TinHoc') is not null
+	DROP DATABASE TT_TinHoc
+
+CREATE DATABASE TT_TinHoc
+GO 
+
 USE [TT_TinHoc]
 GO
+
+
 /* Drop Foreign Key Constraints */
 
 IF EXISTS (SELECT 1 FROM dbo.sysobjects WHERE id = object_id(N'[FK_DangKy_HoaDon]') AND OBJECTPROPERTY(id, N'IsForeignKey') = 1) 
@@ -114,7 +125,8 @@ GO
 
 CREATE TABLE [HoaDon]
 (
-	[MaHD] char(8) NOT NULL,
+	[ID] INT IDENTITY(1,1),
+	[MaHD] AS CAST(('HD' + RIGHT('000000' + CAST(ID AS VARCHAR(6)), 6)) AS CHAR(8)) PERSISTED not null,
 	[NgayLapHD] date NOT NULL,
 	[TongTien] money NOT NULL,
 	[MaNV] char(8) NOT NULL
@@ -147,7 +159,8 @@ CREATE TABLE [LichSuTotNghiep]
 (
 	[NgayNhan] date NOT NULL,
 	[MaHV] char(8) NOT NULL,
-	[MaChungChi] char(8) NOT NULL
+	[MaChungChi] char(8) NOT NULL,
+	[TrangThai] varchar(50) NULL
 )
 GO
 
@@ -346,3 +359,5 @@ GO
 ALTER TABLE [NhomMonHoc] ADD CONSTRAINT [FK_NhomMonHoc_ChungChi]
 	FOREIGN KEY ([MaChungChi]) REFERENCES [ChungChi] ([MaChungChi]) ON DELETE No Action ON UPDATE No Action
 GO
+
+

@@ -30,10 +30,12 @@ create function tbDSHP
 returns table
 as
 return
-	select * from DangKy where MaHV = @mahv and MaHD is not null and left(MaLop, 4) = @mahk
+	select dk.MaHV, dk.MaLop, lh.MaMH, mh.MaNhomMH, dk.NgayDangKy, lh.HocPhi, dk.MaHD from DangKy dk left join Lop lh on dk.MaLop = lh.MaLop 
+	left join MonHoc mh on lh.MaMH = mh.MaMH
+	where dk.MaHV = @mahv and left(dk.MaLop, 4) = @mahk
 go
 
---select * from tbDSHP('HV000014', 'LOP0')
+--select * from tbDSHP('HV000022', '1901')
 --go
 
 --drop function tbDSHP
@@ -151,17 +153,18 @@ begin
 			raiserror (N'Không có dữ liệu!', 16, 1)
 		else
 		begin
-			declare @num int
-			declare @mahd char(8) -- note: mahd cuoi cung truoc khi lap bang + 1. VD: HD000014 -> mahd vua lap: HD000015
+			declare @id int
+			declare @mahd char(8)-- note: MaHD auto increment khi CFEATE TABLE
 			declare @tong money
-			declare @ngaylaphd date -- note: ngay lap hd la ngay chon dky mon cuoi cung
+			declare @ngaylaphd date
 
-			set @num = (select max(cast(right(MaHD, 6) as int)) from HoaDon)
-			set @mahd = 'HD' + right('000000' + cast((@num + 1) as varchar(6)), 6)
-			set @tong = (select sum(HocPhi) from tbDSHP(@mahv, @mahk))
-			set @ngaylaphd = (select max(NgayDangKy) from tbDSHP(@mahv, @mahk))
+			set @tong = (select sum(HocPhi) from tbDSHP(@mahv, @mahk) where MaHD = null)
+			set @ngaylaphd = getdate()
 
-			insert into HoaDon values (@mahd, @ngaylaphd, @tong, @manv)
+			insert into HoaDon values (@ngaylaphd, @tong, @manv)
+
+			set @id = (select max(cast(right(MaHD, 6) as int)) from HoaDon)
+			set @mahd = cast(('HD' + right('000000' + cast(@id as varchar(6)), 6)) as char(8))
 			update DangKy
 			set MaHD = @mahd where MaHV = @mahv and left(MaLop, 4) = @mahk
 			select * from tbDSHP(@mahv, @mahk)

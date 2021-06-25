@@ -149,14 +149,17 @@ create or alter proc ChinhSuaThongTin
 	@ngaysinh date
 as
 begin
-	exec TraCuuThongTin @mahv
+	--exec TraCuuThongTin @mahv
 
 	update HocVien
-	set Password = @pw, CCCD = @cccd, Email = @email, SDT = @sdt, NgaySinh = @ngaysinh
+	set Password = @pw, CCCD = @cccd, Email = @email, SDT = @sdt, NgaySinh = cast(@ngaysinh as date)
 	where MaHV = @mahv
 
 	select * from HocVien where MaHV = @mahv
 end
+go
+
+select * from HocVien where MaHV = 'HV000014'
 go
 --exec ChinhSuaThongTin HV000014, 'glugluglu', '02613455040', 'ngaanlee2112@gmail.com', '0903043089', '2000-11-20'
 --go
@@ -165,21 +168,22 @@ go
 	
 	-- tra cuu DS lop mo
 create or alter proc TraCuuDSLopMo
-	@malh char(8)
+	@mahk char(4)
 as
 begin
-	if exists (select * from Lop where MaLop = @malh)
+	if exists (select * from Lop where left(MaLop, 4) = @mahk)
 	begin
 		declare @ngaymodk date
-		set @ngaymodk = (select NgayMo from Lop where MaLop = @malh)
+		set @ngaymodk = (select max(NgayMo) from Lop where left(MaLop, 4) = @mahk)
+
 		if (cast(GETDATE() as date) > DATEADD(day, 7, @ngaymodk))
-			raiserror (N'Đã hết hạn mở lớp này!', 16, 1)
+			raiserror (N'Đã hết hạn đăng ký học phần!', 16, 1)
 		else
-			select * from Lop where MaLop = @malh
+			select * from Lop where left(MaLop, 4) = @mahk
 	end
 	else
 	begin
-		raiserror (N'Lớp học không tồn tại!', 16, 1)
+		raiserror (N'Sai mã học kỳ!', 16, 1)
 	end
 end
 go
@@ -228,7 +232,7 @@ begin
 	if exists (select * from LichSuTotNghiep where MaHV = @mahv)
 		select * from LichSuTotNghiep where MaHV = @mahv
 	else 
-		print ('Ket qua khong ton tai!')
+		raiserror (N'Kết quả không tồn tại!', 16, 1)
 end
 go
 exec TraCuuLSTN 'HV000001'
