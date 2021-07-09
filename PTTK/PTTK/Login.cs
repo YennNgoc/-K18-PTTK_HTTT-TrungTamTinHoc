@@ -41,18 +41,30 @@ namespace PTTK
                     fr.Show();
                     this.Hide();
                 }
-                else if (Account.username.Contains("QLLH"))
-                {
-                    NVQL__LopHoc fr = new NVQL__LopHoc();
-                    fr.Show();
-                    this.Hide();
-                }
                 else if (Account.username.Contains("HV"))
                 {
                     HocVien fr = new HocVien();
                     fr.Show();
                     this.Hide();
                 }
+                else if (Account.username.Contains("QLLH"))
+                {
+                    NVQL__LopHoc fr = new NVQL__LopHoc();                    
+                    fr.Show();
+                    this.Hide();
+                }
+                else if (Account.username.Contains("NVKT"))
+                {
+                    PhongKhaoThi fr = new PhongKhaoThi();
+                    fr.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    ThuNgan fr = new ThuNgan();
+                    fr.Show();
+                    this.Hide();
+                }    
 
                 //MessageBox.Show("Connected", "Login Notify");
             }

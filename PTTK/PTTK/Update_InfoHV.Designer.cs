@@ -65,7 +65,6 @@
             // 
             // textBox3
             // 
-            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox3.Location = new System.Drawing.Point(146, 108);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(308, 26);
@@ -219,7 +218,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Update_InfoHV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Update_InfoHV";
+            this.Text = "Thong tin Hoc vien";
             this.Load += new System.EventHandler(this.Update_InfoHV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

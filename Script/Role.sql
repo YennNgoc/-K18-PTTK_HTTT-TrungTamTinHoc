@@ -9,6 +9,7 @@ CREATE ROLE Phong_KhaoThi
 GO
 -- grant priviledges to roles
 GRANT SELECT ON HocVien TO HocVien
+GRANT SELECT, INSERT, UPDATE, DELETE ON HocVien TO NVQL_HocVien
 GRANT SELECT ON LichSuThi TO HocVien
 GRANT SELECT ON LichSuTotNghiep TO HocVien
 GRANT SELECT ON DangKy TO HocVien, NVQL_LopHoc
@@ -25,6 +26,21 @@ GRANT EXEC ON ChinhSuaThongTin TO HocVien, NVQL_HocVien
 GRANT EXEC ON DKHP TO HocVien
 GRANT EXEC ON TraCuuLSTN TO HocVien
 GRANT EXEC ON TraCuuDSLopMo TO HocVien
+
+GRANT EXEC ON ThemHV TO NVQL_HocVien
+GRANT EXEC ON XoaHV TO NVQL_HocVien
+
+
+GRANT EXEC ON TraCuu TO NVQL_LopHoc
+GRANT EXEC ON ThemHP TO NVQL_LopHoc
+GRANT EXEC ON XoaHP TO NVQL_LopHoc
+
+GRANT EXEC ON TraCuuDiem TO Phong_KhaoThi
+GRANT EXEC ON TraCuuDiemTheoLH TO Phong_KhaoThi
+
+
+
+
 
 
 -------------------------HOCVIEN
@@ -58,4 +74,12 @@ GO
 
 -- add role to users
 ALTER ROLE NVQL_HocVien ADD MEMBER QLHV0003
+GO
+
+----------------------------NVKT
+CREATE USER [NVKT0001] WITH PASSWORD='Aloalo123'
+GO
+
+-- add role to users
+ALTER ROLE Phong_KhaoThi ADD MEMBER NVKT0001
 GO

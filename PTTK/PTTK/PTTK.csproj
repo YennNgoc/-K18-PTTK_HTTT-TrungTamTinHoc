@@ -78,6 +78,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Thong tin Lop hoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Thong tin Lop hoc.Designer.cs">
+      <DependentUpon>Thong tin Lop hoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThuNgan.cs">
       <SubType>Form</SubType>
     </Compile>

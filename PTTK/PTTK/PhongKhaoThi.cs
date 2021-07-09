@@ -23,12 +23,66 @@ namespace PTTK
 
         private void but_Lop_Click(object sender, EventArgs e)
         {
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = "TraCuuDiem";
+            cmd.CommandType = CommandType.StoredProcedure;
+            
+            if (String.IsNullOrWhiteSpace(tb_MaHV.Text))
+            {
+                MessageBox.Show("Nhap MaHV");
+                return;
+            }    
+                
 
+            cmd.Parameters.Add("@mahv", SqlDbType.Char, 8).Value = tb_MaHV.Text;
+            
+            try
+            {
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                grid_PKT.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void butt_info_Click(object sender, EventArgs e)
         {
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = "TraCuuDiemTheoLH";
+            cmd.CommandType = CommandType.StoredProcedure;
 
+           
+            if (String.IsNullOrWhiteSpace(tb_Lop.Text))
+            {
+                MessageBox.Show("Nhap Ma Lop");
+                return;
+            }
+
+
+            cmd.Parameters.Add("@mahv", SqlDbType.Char, 8).Value = tb_MaHV.Text;
+            cmd.Parameters.Add("@malop", SqlDbType.Char, 8).Value = tb_Lop.Text;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                grid_PKT.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void label6_Click(object sender, EventArgs e)

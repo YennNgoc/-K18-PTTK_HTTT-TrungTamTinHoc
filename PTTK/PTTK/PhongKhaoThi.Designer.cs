@@ -39,13 +39,15 @@
             this.but_Diem = new System.Windows.Forms.Button();
             this.tb_MaHV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tb_Lop = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grid_PKT)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(646, 208);
+            this.label7.Location = new System.Drawing.Point(641, 208);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 20);
             this.label7.TabIndex = 17;
@@ -55,7 +57,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(645, 175);
+            this.label6.Location = new System.Drawing.Point(640, 175);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 20);
             this.label6.TabIndex = 19;
@@ -123,7 +125,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(205, 39);
             this.button3.TabIndex = 8;
-            this.button3.Text = "Mo Lop";
+            this.button3.Text = "Theo Mon hoc";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -149,7 +151,7 @@
             // 
             // tb_MaHV
             // 
-            this.tb_MaHV.Location = new System.Drawing.Point(743, 239);
+            this.tb_MaHV.Location = new System.Drawing.Point(742, 271);
             this.tb_MaHV.Name = "tb_MaHV";
             this.tb_MaHV.Size = new System.Drawing.Size(112, 26);
             this.tb_MaHV.TabIndex = 21;
@@ -157,17 +159,35 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(641, 242);
+            this.label2.Location = new System.Drawing.Point(640, 274);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 20);
             this.label2.TabIndex = 20;
             this.label2.Text = "Ma Hoc vien";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(640, 242);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 20);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Ma Lop";
+            // 
+            // tb_Lop
+            // 
+            this.tb_Lop.Location = new System.Drawing.Point(742, 239);
+            this.tb_Lop.Name = "tb_Lop";
+            this.tb_Lop.Size = new System.Drawing.Size(112, 26);
+            this.tb_Lop.TabIndex = 21;
             // 
             // PhongKhaoThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 555);
+            this.Controls.Add(this.tb_Lop);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_MaHV);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
@@ -200,5 +220,7 @@
         private System.Windows.Forms.Button but_Diem;
         private System.Windows.Forms.TextBox tb_MaHV;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tb_Lop;
     }
 }

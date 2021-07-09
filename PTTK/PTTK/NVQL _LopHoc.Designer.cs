@@ -38,7 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.but_Xoa = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.date_DK = new System.Windows.Forms.DateTimePicker();
             this.cb_SL = new System.Windows.Forms.ComboBox();
@@ -72,6 +72,7 @@
             this.grid_NVQLLH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.checked_HP});
             this.grid_NVQLLH.Location = new System.Drawing.Point(9, 102);
+            this.grid_NVQLLH.MultiSelect = false;
             this.grid_NVQLLH.Name = "grid_NVQLLH";
             this.grid_NVQLLH.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.grid_NVQLLH.RowHeadersVisible = false;
@@ -150,15 +151,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.but_TraCuu_Click);
             // 
-            // button2
+            // but_Xoa
             // 
-            this.button2.Location = new System.Drawing.Point(411, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(206, 39);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Xoa Hoc phan";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.but_TraCuu_Click);
+            this.but_Xoa.Location = new System.Drawing.Point(411, 12);
+            this.but_Xoa.Name = "but_Xoa";
+            this.but_Xoa.Size = new System.Drawing.Size(206, 39);
+            this.but_Xoa.TabIndex = 0;
+            this.but_Xoa.Text = "Xoa Hoc phan";
+            this.but_Xoa.UseVisualStyleBackColor = true;
+            this.but_Xoa.Click += new System.EventHandler(this.but_Xoa_Click);
             // 
             // button3
             // 
@@ -168,7 +169,7 @@
             this.button3.TabIndex = 0;
             this.button3.Text = "Mo Lop";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.but_TraCuu_Click);
+            this.button3.Click += new System.EventHandler(this.but_Mo_Click);
             // 
             // date_DK
             // 
@@ -318,7 +319,7 @@
             this.Controls.Add(this.cb_nhomMH);
             this.Controls.Add(this.grid_NVQLLH);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.but_Xoa);
             this.Controls.Add(this.butt_info);
             this.Controls.Add(this.but_Lop);
             this.Controls.Add(this.button1);
@@ -326,7 +327,6 @@
             this.Name = "NVQL__LopHoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NVQL__LopHoc";
-          
             ((System.ComponentModel.ISupportInitialize)(this.grid_NVQLLH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -345,7 +345,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button but_Xoa;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DateTimePicker date_DK;
         private System.Windows.Forms.ComboBox cb_SL;
