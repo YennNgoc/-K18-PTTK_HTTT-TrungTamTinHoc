@@ -18,6 +18,9 @@ GRANT SELECT ON MonHoc TO HocVien, NVQL_LopHoc
 GRANT SELECT ON NhomMonHoc TO HocVien, NVQL_LopHoc
 GRANT SELECT ON ChungChi TO HocVien, NVQL_LopHoc
 GRANT SELECT ON tbDiem TO HocVien, Phong_KhaoThi
+GRANT SELECT ON tbDSHPDiem TO ThuNgan
+GRANT SELECT, INSERT, UPDATE, DELETE ON HoaDon TO ThuNgan
+
 
 -- EXEC HocVien
 GRANT EXEC ON TraCuuDiem_HV TO HocVien
@@ -34,9 +37,20 @@ GRANT EXEC ON XoaHV TO NVQL_HocVien
 GRANT EXEC ON TraCuu TO NVQL_LopHoc
 GRANT EXEC ON ThemHP TO NVQL_LopHoc
 GRANT EXEC ON XoaHP TO NVQL_LopHoc
+GRANT EXEC ON XemThongTinLop TO NVQL_LopHoc
+GRANT EXEC ON CapNhapSL TO NVQL_LopHoc
+GRANT EXEC ON ThemLop TO NVQL_LopHoc
+GRANT EXEC ON LocLop TO NVQL_LopHoc
 
 GRANT EXEC ON TraCuuDiem TO Phong_KhaoThi
 GRANT EXEC ON TraCuuDiemTheoLH TO Phong_KhaoThi
+GRANT EXEC ON TraCuuDiemTheoNMH TO Phong_KhaoThi
+GRANT EXEC ON updateDiem TO Phong_KhaoThi
+
+GRANT EXEC ON TraCuuHD TO ThuNgan
+GRANT EXEC ON TraCuuDSHP TO ThuNgan
+GRANT EXEC ON LapHD TO ThuNgan
+
 
 
 
@@ -82,4 +96,12 @@ GO
 
 -- add role to users
 ALTER ROLE Phong_KhaoThi ADD MEMBER NVKT0001
+GO
+
+----------------------------NVTN
+CREATE USER [NVTN0002] WITH PASSWORD='Aloalo123'
+GO
+
+-- add role to users
+ALTER ROLE ThuNgan ADD MEMBER NVTN0002
 GO
