@@ -139,7 +139,9 @@ namespace PTTK
 
         }
 
+        private void NVQL__LopHoc_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

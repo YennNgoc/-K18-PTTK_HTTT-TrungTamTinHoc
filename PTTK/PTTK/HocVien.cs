@@ -23,7 +23,7 @@ namespace PTTK
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Update_InfoHV fr = new Update_InfoHV();
+            ThongTinHocVien fr = new ThongTinHocVien();
             fr.Show();
 
         }

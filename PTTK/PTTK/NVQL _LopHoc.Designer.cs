@@ -327,6 +327,7 @@
             this.Name = "NVQL__LopHoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NVQL__LopHoc";
+            this.Load += new System.EventHandler(this.NVQL__LopHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid_NVQLLH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

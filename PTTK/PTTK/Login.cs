@@ -37,31 +37,31 @@ namespace PTTK
                 MessageBox.Show(Account.username + " Connected!", "Login Notify");
                 if (Account.username.Contains("QLHV"))
                 {
-                    NVQL_HocVien fr = new NVQL_HocVien();
+                    Menu_NVQLHocVien fr = new Menu_NVQLHocVien();
                     fr.Show();
                     this.Hide();
                 }
                 else if (Account.username.Contains("HV"))
                 {
-                    HocVien fr = new HocVien();
+                    Menu_HocVien fr = new Menu_HocVien();
                     fr.Show();
                     this.Hide();
                 }
                 else if (Account.username.Contains("QLLH"))
                 {
-                    NVQL__LopHoc fr = new NVQL__LopHoc();                    
+                    Menu_NVQLLopHoc fr = new Menu_NVQLLopHoc();                    
                     fr.Show();
                     this.Hide();
                 }
                 else if (Account.username.Contains("NVKT"))
                 {
-                    PhongKhaoThi fr = new PhongKhaoThi();
+                    Menu_PhongKhaoThi fr = new Menu_PhongKhaoThi();
                     fr.Show();
                     this.Hide();
                 }
                 else
                 {
-                    ThuNgan fr = new ThuNgan();
+                    Menu_ThuNgan fr = new Menu_ThuNgan();
                     fr.Show();
                     this.Hide();
                 }    
