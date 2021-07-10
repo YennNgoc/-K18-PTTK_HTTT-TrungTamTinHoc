@@ -135,7 +135,8 @@ GO
 
 CREATE TABLE [HocVien]
 (
-	[MaHV] char(8) NOT NULL,
+	[ID] INT IDENTITY(1,1),
+	[MaHV] AS CAST(('HV' + RIGHT('000000' + CAST(ID AS VARCHAR(6)), 6)) AS CHAR(8)) PERSISTED not null,
 	[Password] varchar(20) NOT NULL,
 	[HoTen] nvarchar(50) NOT NULL,
 	[CCCD] char(12) NOT NULL,

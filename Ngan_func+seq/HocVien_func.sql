@@ -78,22 +78,18 @@ create or alter proc TraCuuDiemTheoNMH_HV
 	@manmh char(8)
 as
 begin
-	if exists (select * from HocVien where MaHV = @mahv)
+	if exists (select * from NhomMonHoc where MaNhomMH = @manmh)
 	begin
-		if exists (select * from NhomMonHoc where MaNhomMH = @manmh)
-		begin
-			declare @dem int
-			set @dem = (select count(*) from tbDiem(@mahv) where MaNhomMH = @manmh)
-			if (@dem = 0)
-				raiserror (N'Học viên chưa đăng ký nhóm môn học này!', 16, 1)
-			else
-				select * from tbDiem(@mahv) where MaNhomMH = @manmh
-		end
+		declare @dem int
+		set @dem = (select count(*) from tbDiem(@mahv) where MaNhomMH = @manmh)
+		if (@dem = 0)
+			raiserror (N'Học viên chưa đăng ký nhóm môn học này!', 16, 1)
 		else
-			raiserror (N'Nhóm môn học không tồn tại!', 16, 1)
+			select * from tbDiem(@mahv) where MaNhomMH = @manmh
 	end
 	else
-		raiserror (N'Học viên không tồn tại', 16, 1)
+		raiserror (N'Nhóm môn học không tồn tại!', 16, 1)
+
 end
 go
 --exec TraCuuDiemTheoNMH_HV 'HV000001', 'NMH00002'
@@ -193,7 +189,7 @@ go
 
 -----------------------------------------------------------------------------------------------------------------------------------
 	
-	-- dang ky hoc phan
+	-- dang ky hoc phan (+1 vao SL hoc vien cua lop)
 create or alter proc DKHP
 	@mahv char(8),
 	@malh char(8)
@@ -208,10 +204,18 @@ begin
 
 		if (cast(GETDATE() as date) > DATEADD(day, 7, @ngaymodk))
 			raiserror (N'Đã hết hạn mở lớp này!', 16, 1)
+		else if (select SoLuong from Lop where MaLop = @malh) = 30
+			raiserror (N'Đã hết slot đăng ký!', 16, 1)
 		else
 		begin
-			insert into DangKy values (@ngaydk, @mahv, @malh, null)
-			select * from DangKy where MaHV = @mahv and MaLop = @malh
+			if exists (select * from DangKy where MaLop = @malh and MaHV = @mahv)
+				raiserror (N'Đã đăng ký lớp này!', 16, 1)
+			else
+			begin
+				insert into DangKy values (@ngaydk, @mahv, @malh, null)
+				update Lop set Soluong = Soluong + 1 where MaLop = @malh
+				select * from DangKy where MaHV = @mahv and MaLop = @malh
+			end
 		end
 	end
 	else

@@ -5,6 +5,7 @@ go
 
 	-- ngay mo mon <= ngay dang ky <= ngay mo mon + 7 --> proc DKHP o file HocVien_func.sql
 	-- or: Role HV 
+
 create or alter trigger tr_insert_check_NgayDK
 on DangKy
 instead of insert
@@ -44,57 +45,10 @@ go
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	-- ngay thi > ngay mo lop --> proc them lop hoc (ong Nam)
+	-- ngay thi > ngay mo lop --> proc MoLichThi o file KhaoThi_func.sql
 	-- note1: ngay mo mon (ngay 1 thang 6/8/10); ngay bat dau hoc (ngay 15 thang 6/8/10) + 3 thang = ngay ket thuc (ngay 15 thang 9/11/1(nam sau)); ngay thi (ngay 21 -> 28 thang 9/11/1(nam sau))
 	-- note2: 3 ca thi --> sang (8h) + trua chieu (13h) + toi (18h)
-	-- or: Role NV (NVQL lop hoc)
-create or alter proc MoLichThi
-	@manv char(8),
-	@malh char(8),
-	@diadiem varchar(50),
-	@ngaythi varchar (50) -- format: yyyy-mm-dd hh:mm:ss
-as
-begin
-	if exists (select * from Lop where MaLop = @malh)
-	begin
-		if exists (select * from Lop where MaLop = @malh and MaNV = @manv)
-		begin
-			if exists (select * from DangKy where MaLop = @malh)
-			begin
-				declare @ngaybatdauthi date
-				set @ngaybatdauthi = (select dateadd(day, 20, dateadd(month, 3, NgayMo)) from Lop where MaLop = @malh)
-
-				if ((cast(@ngaythi as date) >= @ngaybatdauthi) and (cast(@ngaythi as date) <= (@ngaybatdauthi + 7)))
-				-- note: neu ngay thi trong khoang tu 21 --> 28
-				begin
-					declare @mahv char(8)
-					declare c cursor for select MaHV from DangKy where MaLop = @malh
-					open c
-					fetch next from c into @mahv
-
-					while (@@FETCH_STATUS = 0)
-					begin
-						insert into LichSuThi (MaHV, MaLop, NgayThi, DiaDiem)
-						values (@mahv, @malh, cast(@ngaythi as datetime), @diadiem)
-
-						fetch next from c into @mahv
-					end
-					close c
-					deallocate c
-				end
-				else
-					raiserror (N'Ngày thi phải từ ngày 21 --> 28 trong tháng!', 16, 1)
-			end
-			else
-				raiserror (N'Lớp học này chưa có học viên đăng ký!', 16, 1)
-		end
-		else	
-			raiserror (N'Lớp học này không thuộc quyền quản lý của nhân viên!', 16, 1)
-	end
-	else
-		raiserror (N'Lớp học không tồn tại!', 16, 1)
-end
-go
+	-- role: NV Khao Thi
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

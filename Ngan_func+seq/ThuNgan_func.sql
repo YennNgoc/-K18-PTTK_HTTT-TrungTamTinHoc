@@ -3,6 +3,7 @@ go
 
 
 	-- func tbHD: xem hoa don theo ma nhan vien
+
 create function tbHD
 (
 	@manv char(8)
@@ -22,6 +23,7 @@ go
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	-- func tbHP: xem DSHP theo ma hoc vien + hoc ky de lap hoa don
+
 create function tbDSHP
 (
 	@mahv char(8),
@@ -44,6 +46,7 @@ go
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	-- a) proc TraCuuHD: xem tat ca hoa don
+
 create or alter proc TraCuuHD
 	@manv char(8)
 as
@@ -62,6 +65,7 @@ go
 ---------------------------------------------------------------------------------------------------------------------------
 	
 	-- b) proc TraCuuHDTheoHD: xem HD theo ma hoa don
+
 create or alter proc TraCuuHDTheoHD
 	@manv char(8),
 	@mahd char(8)
@@ -87,6 +91,7 @@ go
 ---------------------------------------------------------------------------------------------------------------------------
 	
 	-- c) proc TraCuuHDTheoHV: xem HD theo ma hoc vien
+
 create or alter proc TraCuuHDTheoHV
 	@manv char(8),
 	@mahv char(8)
@@ -112,6 +117,7 @@ go
 ---------------------------------------------------------------------------------------------------------------------------
 	
 	--proc TraCuuDSHP: tra cuu DSHP cua hoc vien de lap hoa don
+
 create or alter proc TraCuuDSHP
 	@mahv char(8),
 	@mahk char(4)
@@ -138,6 +144,7 @@ go
 ----------------------------------------------------------------------------------------------------------------------------
 
 	-- proc LapHD: lap hoa don theo ma hoc vien + hoc ky
+
 create or alter proc LapHD
 	@manv char(8),
 	@mahv char(8),
@@ -154,7 +161,7 @@ begin
 		else
 		begin
 			declare @id int
-			declare @mahd char(8)-- note: MaHD auto increment khi CFEATE TABLE
+			declare @mahd char(8)-- note: MaHD auto increment khi CREATE TABLE
 			declare @tong money
 			declare @ngaylaphd date
 
@@ -163,7 +170,7 @@ begin
 
 			insert into HoaDon values (@ngaylaphd, @tong, @manv)
 
-			set @id = (select max(cast(right(MaHD, 6) as int)) from HoaDon)
+			set @id = (select max(cast(right(MaHD, 6) as int)) from HoaDon) -- note: tim ma hoa don moi nhat vua lap
 			set @mahd = cast(('HD' + right('000000' + cast(@id as varchar(6)), 6)) as char(8))
 			update DangKy
 			set MaHD = @mahd where MaHV = @mahv and left(MaLop, 4) = @mahk
