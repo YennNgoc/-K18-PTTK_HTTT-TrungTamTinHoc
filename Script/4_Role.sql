@@ -9,12 +9,12 @@ GO
 GRANT SELECT ON HocVien TO HocVien
 GRANT SELECT, INSERT, UPDATE, DELETE ON HocVien TO NVQL_HocVien
 GRANT SELECT ON LichSuThi TO HocVien, Phong_KhaoThi
-GRANT SELECT ON LichSuTotNghiep TO HocVien
+GRANT SELECT ON LichSuTotNghiep TO HocVien, Phong_KhaoThi
 GRANT SELECT ON DangKy TO HocVien, NVQL_LopHoc
 GRANT SELECT ON Lop TO HocVien, NVQL_LopHoc
 GRANT SELECT ON MonHoc TO HocVien, NVQL_LopHoc
 GRANT SELECT ON NhomMonHoc TO HocVien, NVQL_LopHoc
-GRANT SELECT ON ChungChi TO HocVien, NVQL_LopHoc
+GRANT SELECT ON ChungChi TO HocVien, NVQL_LopHoc, Phong_KhaoThi
 GRANT SELECT ON tbDiem TO HocVien, Phong_KhaoThi
 GRANT SELECT ON tbDSHPDiem TO ThuNgan
 GRANT SELECT ON NhanVien TO NVQL_LopHoc

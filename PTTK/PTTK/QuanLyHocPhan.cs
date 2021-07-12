@@ -136,13 +136,13 @@ namespace PTTK
             cb_nhomMH.DataSource = dt;
             cb_nhomMH.DisplayMember = "MaNhomMH";
 
-            
-            cmd.CommandText = "SELECT * FROM MonHoc";
+            SqlCommand cmd1 = con.CreateCommand();
+            cmd1.CommandText = "SELECT * FROM MonHoc";
             //cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.ExecuteNonQuery();
+            cmd1.ExecuteNonQuery();
             SqlDataAdapter da1 = new SqlDataAdapter();
-            da.SelectCommand = cmd;
+            da.SelectCommand = cmd1;
             DataTable dt1 = new DataTable();
             da.Fill(dt1);
             grid_NVQLLH.DataSource = dt1;

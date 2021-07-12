@@ -49,7 +49,7 @@
             this.grid_PKT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_PKT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.checked_HP});
-            this.grid_PKT.Location = new System.Drawing.Point(12, 72);
+            this.grid_PKT.Location = new System.Drawing.Point(12, 12);
             this.grid_PKT.Name = "grid_PKT";
             this.grid_PKT.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.grid_PKT.RowHeadersVisible = false;
@@ -71,7 +71,7 @@
             // 
             // butt_Lop
             // 
-            this.butt_Lop.Location = new System.Drawing.Point(643, 252);
+            this.butt_Lop.Location = new System.Drawing.Point(643, 192);
             this.butt_Lop.Name = "butt_Lop";
             this.butt_Lop.Size = new System.Drawing.Size(211, 39);
             this.butt_Lop.TabIndex = 9;
@@ -81,7 +81,7 @@
             // 
             // but_Diem
             // 
-            this.but_Diem.Location = new System.Drawing.Point(644, 149);
+            this.but_Diem.Location = new System.Drawing.Point(644, 89);
             this.but_Diem.Name = "but_Diem";
             this.but_Diem.Size = new System.Drawing.Size(211, 39);
             this.but_Diem.TabIndex = 10;
@@ -91,7 +91,7 @@
             // 
             // tb_MaHV
             // 
-            this.tb_MaHV.Location = new System.Drawing.Point(742, 117);
+            this.tb_MaHV.Location = new System.Drawing.Point(742, 57);
             this.tb_MaHV.Name = "tb_MaHV";
             this.tb_MaHV.Size = new System.Drawing.Size(112, 26);
             this.tb_MaHV.TabIndex = 21;
@@ -99,7 +99,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(640, 120);
+            this.label2.Location = new System.Drawing.Point(640, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 20);
             this.label2.TabIndex = 20;
@@ -108,7 +108,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(641, 223);
+            this.label1.Location = new System.Drawing.Point(641, 163);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 20);
             this.label1.TabIndex = 20;
@@ -116,14 +116,14 @@
             // 
             // tb_Lop
             // 
-            this.tb_Lop.Location = new System.Drawing.Point(743, 220);
+            this.tb_Lop.Location = new System.Drawing.Point(743, 160);
             this.tb_Lop.Name = "tb_Lop";
             this.tb_Lop.Size = new System.Drawing.Size(112, 26);
             this.tb_Lop.TabIndex = 21;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(643, 368);
+            this.button3.Location = new System.Drawing.Point(643, 308);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(211, 39);
             this.button3.TabIndex = 8;
@@ -134,7 +134,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(641, 339);
+            this.label3.Location = new System.Drawing.Point(641, 279);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 20);
             this.label3.TabIndex = 20;
@@ -142,7 +142,7 @@
             // 
             // tb_NMH
             // 
-            this.tb_NMH.Location = new System.Drawing.Point(743, 336);
+            this.tb_NMH.Location = new System.Drawing.Point(743, 276);
             this.tb_NMH.Name = "tb_NMH";
             this.tb_NMH.Size = new System.Drawing.Size(112, 26);
             this.tb_NMH.TabIndex = 21;
@@ -151,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 555);
+            this.ClientSize = new System.Drawing.Size(868, 467);
             this.Controls.Add(this.tb_NMH);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tb_Lop);
