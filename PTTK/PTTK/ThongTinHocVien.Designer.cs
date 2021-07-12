@@ -58,28 +58,28 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(146, 394);
+            this.textBox2.Location = new System.Drawing.Point(146, 391);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(308, 26);
             this.textBox2.TabIndex = 0;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(146, 108);
+            this.textBox3.Location = new System.Drawing.Point(146, 111);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(308, 26);
             this.textBox3.TabIndex = 0;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(146, 163);
+            this.textBox4.Location = new System.Drawing.Point(146, 167);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(308, 26);
             this.textBox4.TabIndex = 0;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(146, 291);
+            this.textBox5.Location = new System.Drawing.Point(146, 279);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(308, 26);
             this.textBox5.TabIndex = 0;
@@ -96,7 +96,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 400);
+            this.label2.Location = new System.Drawing.Point(26, 397);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 1;
@@ -105,7 +105,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 111);
+            this.label3.Location = new System.Drawing.Point(26, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 20);
             this.label3.TabIndex = 1;
@@ -114,7 +114,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 166);
+            this.label4.Location = new System.Drawing.Point(26, 169);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 20);
             this.label4.TabIndex = 1;
@@ -123,7 +123,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 294);
+            this.label5.Location = new System.Drawing.Point(26, 283);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 20);
             this.label5.TabIndex = 1;
@@ -131,14 +131,14 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(146, 344);
+            this.textBox6.Location = new System.Drawing.Point(146, 335);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(308, 26);
             this.textBox6.TabIndex = 0;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(146, 224);
+            this.textBox7.Location = new System.Drawing.Point(146, 223);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(308, 26);
             this.textBox7.TabIndex = 0;
@@ -146,7 +146,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 347);
+            this.label6.Location = new System.Drawing.Point(26, 340);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 20);
             this.label6.TabIndex = 1;
@@ -155,7 +155,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(26, 227);
+            this.label7.Location = new System.Drawing.Point(26, 226);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 20);
             this.label7.TabIndex = 1;
@@ -167,12 +167,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(503, 55);
+            this.pictureBox1.Location = new System.Drawing.Point(512, 55);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(225, 225);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.Size = new System.Drawing.Size(321, 320);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button1
             // 
@@ -194,7 +195,7 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Update_InfoHV
+            // ThongTinHocVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -216,7 +217,7 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Name = "Update_InfoHV";
+            this.Name = "ThongTinHocVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thong tin Hoc vien";
             this.Load += new System.EventHandler(this.Update_InfoHV_Load);

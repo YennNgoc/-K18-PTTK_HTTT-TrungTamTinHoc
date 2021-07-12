@@ -132,7 +132,7 @@
             this.butt_TraCuu.Name = "butt_TraCuu";
             this.butt_TraCuu.Size = new System.Drawing.Size(173, 34);
             this.butt_TraCuu.TabIndex = 12;
-            this.butt_TraCuu.Text = "Tra cuu Ket qua";
+            this.butt_TraCuu.Text = "Tra cuu";
             this.butt_TraCuu.UseVisualStyleBackColor = true;
             this.butt_TraCuu.Click += new System.EventHandler(this.butt_TraCuu_Click);
             // 

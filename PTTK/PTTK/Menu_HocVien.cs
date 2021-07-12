@@ -34,5 +34,11 @@ namespace PTTK
            DangKyHocPhan fr = new DangKyHocPhan();
             fr.Show();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            DangKyHocPhan fr = new DangKyHocPhan();
+            fr.Show();
+        }
     }
 }

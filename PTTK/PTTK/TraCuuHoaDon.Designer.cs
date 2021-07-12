@@ -37,12 +37,12 @@
             this.data_HD.AllowUserToAddRows = false;
             this.data_HD.AllowUserToDeleteRows = false;
             this.data_HD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_HD.Location = new System.Drawing.Point(16, 13);
+            this.data_HD.Location = new System.Drawing.Point(12, 13);
             this.data_HD.Name = "data_HD";
             this.data_HD.ReadOnly = true;
             this.data_HD.RowHeadersWidth = 62;
             this.data_HD.RowTemplate.Height = 28;
-            this.data_HD.Size = new System.Drawing.Size(772, 425);
+            this.data_HD.Size = new System.Drawing.Size(776, 425);
             this.data_HD.TabIndex = 12;
             // 
             // TraCuuHoaDon

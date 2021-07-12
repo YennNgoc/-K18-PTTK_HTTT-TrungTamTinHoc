@@ -12,9 +12,11 @@ namespace PTTK
 {
     public partial class Menu_PhongKhaoThi : Form
     {
+        
         public Menu_PhongKhaoThi()
         {
             InitializeComponent();
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -45,6 +47,11 @@ namespace PTTK
         private void ChinhSua_Click(object sender, EventArgs e)
         {
             ChinhSuaDiem fr = new ChinhSuaDiem();
+            fr.Show();
+        }
+        private void MoLichThi_Click(object sender, EventArgs e)
+        {
+            MoLichThi fr = new MoLichThi();
             fr.Show();
         }
     }

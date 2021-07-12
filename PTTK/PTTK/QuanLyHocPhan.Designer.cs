@@ -165,6 +165,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.but_TraCuu);
             this.Name = "QuanLyHocPhan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuanLyHocPhan";
             this.Load += new System.EventHandler(this.QuanLyHocPhan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid_NVQLLH)).EndInit();

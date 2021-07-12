@@ -53,9 +53,9 @@
             // 
             // butt_TraCuu
             // 
-            this.butt_TraCuu.Location = new System.Drawing.Point(609, 95);
+            this.butt_TraCuu.Location = new System.Drawing.Point(610, 132);
             this.butt_TraCuu.Name = "butt_TraCuu";
-            this.butt_TraCuu.Size = new System.Drawing.Size(172, 34);
+            this.butt_TraCuu.Size = new System.Drawing.Size(172, 44);
             this.butt_TraCuu.TabIndex = 1;
             this.butt_TraCuu.Text = "Tra cuu Ket qua";
             this.butt_TraCuu.UseVisualStyleBackColor = true;
@@ -64,7 +64,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(605, 51);
+            this.label7.Location = new System.Drawing.Point(606, 88);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 20);
             this.label7.TabIndex = 10;
@@ -73,7 +73,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(604, 18);
+            this.label6.Location = new System.Drawing.Point(605, 55);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 20);
             this.label6.TabIndex = 11;
@@ -87,7 +87,7 @@
             "1",
             "2",
             "3"});
-            this.comboBox1.Location = new System.Drawing.Point(669, 48);
+            this.comboBox1.Location = new System.Drawing.Point(670, 85);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(112, 28);
             this.comboBox1.TabIndex = 9;
@@ -98,7 +98,7 @@
             // 
             this.dateTimePicker1.CustomFormat = "yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(668, 13);
+            this.dateTimePicker1.Location = new System.Drawing.Point(669, 50);
             this.dateTimePicker1.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -108,9 +108,9 @@
             // 
             // butt_Chungchi
             // 
-            this.butt_Chungchi.Location = new System.Drawing.Point(609, 135);
+            this.butt_Chungchi.Location = new System.Drawing.Point(609, 221);
             this.butt_Chungchi.Name = "butt_Chungchi";
-            this.butt_Chungchi.Size = new System.Drawing.Size(172, 34);
+            this.butt_Chungchi.Size = new System.Drawing.Size(172, 44);
             this.butt_Chungchi.TabIndex = 1;
             this.butt_Chungchi.Text = "Tra cuu Chung chi";
             this.butt_Chungchi.UseVisualStyleBackColor = true;

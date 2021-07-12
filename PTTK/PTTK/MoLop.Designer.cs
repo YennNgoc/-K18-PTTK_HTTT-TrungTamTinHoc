@@ -33,18 +33,19 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_sl = new System.Windows.Forms.TextBox();
+            this.tb_magv = new System.Windows.Forms.TextBox();
+            this.tb_mamh = new System.Windows.Forms.TextBox();
+            this.tb_malop = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_XacNhan = new System.Windows.Forms.Button();
             this.cb_nhomMH = new System.Windows.Forms.ComboBox();
             this.grid_NVQLLH = new System.Windows.Forms.DataGridView();
             this.checked_HP = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.but_TraCuu = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grid_NVQLLH)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,33 +94,33 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Ma lop";
             // 
-            // textBox5
+            // tb_sl
             // 
-            this.textBox5.Location = new System.Drawing.Point(184, 250);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(271, 26);
-            this.textBox5.TabIndex = 3;
+            this.tb_sl.Location = new System.Drawing.Point(184, 250);
+            this.tb_sl.Name = "tb_sl";
+            this.tb_sl.Size = new System.Drawing.Size(271, 26);
+            this.tb_sl.TabIndex = 3;
             // 
-            // textBox4
+            // tb_magv
             // 
-            this.textBox4.Location = new System.Drawing.Point(184, 146);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(271, 26);
-            this.textBox4.TabIndex = 4;
+            this.tb_magv.Location = new System.Drawing.Point(184, 146);
+            this.tb_magv.Name = "tb_magv";
+            this.tb_magv.Size = new System.Drawing.Size(221, 26);
+            this.tb_magv.TabIndex = 4;
             // 
-            // textBox3
+            // tb_mamh
             // 
-            this.textBox3.Location = new System.Drawing.Point(184, 91);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(271, 26);
-            this.textBox3.TabIndex = 5;
+            this.tb_mamh.Location = new System.Drawing.Point(184, 91);
+            this.tb_mamh.Name = "tb_mamh";
+            this.tb_mamh.Size = new System.Drawing.Size(271, 26);
+            this.tb_mamh.TabIndex = 5;
             // 
-            // textBox1
+            // tb_malop
             // 
-            this.textBox1.Location = new System.Drawing.Point(184, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(271, 26);
-            this.textBox1.TabIndex = 6;
+            this.tb_malop.Location = new System.Drawing.Point(184, 38);
+            this.tb_malop.Name = "tb_malop";
+            this.tb_malop.Size = new System.Drawing.Size(271, 26);
+            this.tb_malop.TabIndex = 6;
             // 
             // dateTimePicker1
             // 
@@ -152,14 +153,15 @@
             this.comboBox1.Size = new System.Drawing.Size(271, 28);
             this.comboBox1.TabIndex = 13;
             // 
-            // button1
+            // btn_XacNhan
             // 
-            this.button1.Location = new System.Drawing.Point(309, 366);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 41);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Xac nhan";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_XacNhan.Location = new System.Drawing.Point(309, 366);
+            this.btn_XacNhan.Name = "btn_XacNhan";
+            this.btn_XacNhan.Size = new System.Drawing.Size(146, 41);
+            this.btn_XacNhan.TabIndex = 14;
+            this.btn_XacNhan.Text = "Xac nhan";
+            this.btn_XacNhan.UseVisualStyleBackColor = true;
+            this.btn_XacNhan.Click += new System.EventHandler(this.btn_XacNhan_Click);
             // 
             // cb_nhomMH
             // 
@@ -207,15 +209,26 @@
             this.but_TraCuu.UseVisualStyleBackColor = true;
             this.but_TraCuu.Click += new System.EventHandler(this.but_TraCuu_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(411, 141);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(44, 42);
+            this.button2.TabIndex = 18;
+            this.button2.Text = ">";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // MoLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.cb_nhomMH);
             this.Controls.Add(this.grid_NVQLLH);
             this.Controls.Add(this.but_TraCuu);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_XacNhan);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label7);
@@ -224,11 +237,12 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_sl);
+            this.Controls.Add(this.tb_magv);
+            this.Controls.Add(this.tb_mamh);
+            this.Controls.Add(this.tb_malop);
             this.Name = "MoLop";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MoLop";
             this.Load += new System.EventHandler(this.MoLop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid_NVQLLH)).EndInit();
@@ -244,17 +258,18 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_sl;
+        private System.Windows.Forms.TextBox tb_magv;
+        private System.Windows.Forms.TextBox tb_mamh;
+        private System.Windows.Forms.TextBox tb_malop;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_XacNhan;
         private System.Windows.Forms.ComboBox cb_nhomMH;
         private System.Windows.Forms.DataGridView grid_NVQLLH;
         private System.Windows.Forms.DataGridViewCheckBoxColumn checked_HP;
         private System.Windows.Forms.Button but_TraCuu;
+        private System.Windows.Forms.Button button2;
     }
 }

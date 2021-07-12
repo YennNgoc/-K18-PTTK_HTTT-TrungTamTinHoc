@@ -66,7 +66,26 @@ namespace PTTK
 
         private void butt_TraCuu_Click(object sender, EventArgs e)
         {
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = "TraDiemTheoLop";
+            cmd.CommandType = CommandType.StoredProcedure;
 
+            cmd.Parameters.Add("@mahv", SqlDbType.Char, 8).Value = Account.username;
+            cmd.Parameters.Add("@hocki", SqlDbType.Int).Value = comboBox1.Text ;
+            cmd.Parameters.Add("@nam", SqlDbType.Char, 4).Value = dateTimePicker1.Text;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                data_HV.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

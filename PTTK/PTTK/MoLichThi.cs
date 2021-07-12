@@ -11,45 +11,23 @@ using System.Data.SqlClient;
 
 namespace PTTK
 {
-    public partial class DangKyHocPhan : Form
+    public partial class MoLichThi : Form
     {
         SqlConnection con = new SqlConnection(Account.connectString);
-        public DangKyHocPhan()
+        public MoLichThi()
         {
             InitializeComponent();
             con.Open();
         }
 
-        private void butt_DSLop_Click(object sender, EventArgs e)
+        private void btn_MoLichThi_Click(object sender, EventArgs e)
         {
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "TraCuuDSLopMo";
+            cmd.CommandText = "MoLichThi";
             cmd.CommandType = CommandType.StoredProcedure;
-
-            
-            try
-            {
-                cmd.ExecuteNonQuery();
-                SqlDataAdapter da = new SqlDataAdapter();
-                da.SelectCommand = cmd;
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btn_DangKy_Click(object sender, EventArgs e)
-        {
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "DKHP";
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@mahv", SqlDbType.Char, 8).Value = Account.username;
-            cmd.Parameters.Add("@malh", SqlDbType.Char, 8).Value = tb_malop.Text;
+            cmd.Parameters.Add("@malh", SqlDbType.Char, 8).Value = tb_maLop.Text;
+            cmd.Parameters.Add("@diadiem", SqlDbType.VarChar, 20).Value = tb_DiaDiem.Text;
+            cmd.Parameters.Add("@ngaythi", SqlDbType.VarChar, 50).Value = tb_gio.Text;
 
             try
             {
@@ -63,12 +41,12 @@ namespace PTTK
             }
         }
 
-        private void btn_KetQuaDK_Click(object sender, EventArgs e)
+        private void btn_XemLichThi_Click(object sender, EventArgs e)
         {
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "TraCuuKQDK";
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@mahv", SqlDbType.Char, 8).Value = Account.username;
+            cmd.CommandText = "select * from LichSuThi";
+            //cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.Add("@mahv", SqlDbType.Char, 8).Value = Account.username;
             try
             {
                 cmd.ExecuteNonQuery();
@@ -83,6 +61,11 @@ namespace PTTK
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

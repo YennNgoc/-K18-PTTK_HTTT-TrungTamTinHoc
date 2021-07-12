@@ -8,7 +8,7 @@ GO
 -- grant priviledges to roles
 GRANT SELECT ON HocVien TO HocVien
 GRANT SELECT, INSERT, UPDATE, DELETE ON HocVien TO NVQL_HocVien
-GRANT SELECT ON LichSuThi TO HocVien
+GRANT SELECT ON LichSuThi TO HocVien, Phong_KhaoThi
 GRANT SELECT ON LichSuTotNghiep TO HocVien
 GRANT SELECT ON DangKy TO HocVien, NVQL_LopHoc
 GRANT SELECT ON Lop TO HocVien, NVQL_LopHoc
@@ -25,6 +25,7 @@ GRANT EXEC ON TraCuuThongTin TO HocVien, NVQL_HocVien
 GRANT EXEC ON ChinhSuaThongTin TO HocVien, NVQL_HocVien
 ---------------------------------------
 GRANT EXEC ON TraCuuDiem_HV TO HocVien
+GRANT EXEC ON TraDiemTheoLop TO HocVien
 GRANT EXEC ON DKHP TO HocVien
 GRANT EXEC ON TraCuuLSTN TO HocVien
 GRANT EXEC ON TraCuuDSLopMo TO HocVien
@@ -45,10 +46,14 @@ GRANT EXEC ON TraCuuDiem TO Phong_KhaoThi
 GRANT EXEC ON TraCuuDiemTheoLH TO Phong_KhaoThi
 GRANT EXEC ON TraCuuDiemTheoNMH TO Phong_KhaoThi
 GRANT EXEC ON updateDiem TO Phong_KhaoThi
+GRANT EXEC ON MoLichThi TO Phong_KhaoThi
+GRANT EXEC ON XetToTNghiep TO Phong_KhaoThi
+GRANT EXEC ON TotNghiep TO Phong_KhaoThi
 -- EXEC HocVien - NVQL_ThuNgan
 GRANT EXEC ON TraCuuHD TO ThuNgan
 GRANT EXEC ON TraCuuDSHP TO ThuNgan
 GRANT EXEC ON LapHD TO ThuNgan
+GRANT EXEC ON tongHD_return TO ThuNgan
 GO
 -------------------------HOCVIEN
 -- create user

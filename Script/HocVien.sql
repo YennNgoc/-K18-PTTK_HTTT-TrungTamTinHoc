@@ -184,6 +184,18 @@ begin
 	end
 end
 go
+-- proc TraCuuDSLopMo
+
+create or alter proc TraCuuDSLopMo
+as
+begin
+	declare @ngaytracuu date -- lay tgian hien tai khi tra cuu DS lop mo
+	set @ngaytracuu = getdate()
+	
+	select * from Lop
+	where @ngaytracuu between NgayMo and dateadd(day, 7, NgayMo)
+end
+go
 
 create or alter proc TraCuuDSLopMo
 	@mahk char(4)
@@ -255,4 +267,30 @@ end
 go
 --exec TraCuuLSTN 'HV000004'
 --go
+create or alter proc TraCuuKQDK
+	@mahv char(8)
+as
+begin
+	select * from DangKy where MaHV = @mahv
+	
+end
+go
+
+exec TraCuuKQDK "HV000001"
+
+go
+create or alter proc TraDiemTheoLop
+@mahv char(8),
+@hocki int,
+@nam char(4)
+as
+begin
+declare @namloc as char(2)
+set @namloc=substring(@nam,3,2)
+Select * from LichSuThi where MaHV =@mahv and
+(substring(MaLop,1,2)=@namloc and @hocki is null)  or 
+(substring(MaLop,4,1)=@hocki and @namloc is null) or 
+(substring(MaLop,1,2)=@namloc and substring(MaLop,3,2)=@hocki); 
+end;
+go
 

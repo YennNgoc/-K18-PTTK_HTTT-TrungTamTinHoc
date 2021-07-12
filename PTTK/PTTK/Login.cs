@@ -73,5 +73,18 @@ namespace PTTK
                 MessageBox.Show("Unsuccessful!", "Login Notify");
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            textBox1.Text=(" Nhóm 17 \r\n \r\n 18120213 - Võ Đại Nam \r\n 18120214 - Lê Ngọc Bảo Ngân" +
+                "\r\n 18120215 - Vũ Yến Ngọc" +
+                "\r\n 18120227 - Phạm Văn Minh Phương" +
+                "\r\n 18120456 - Lại Bùi Thành Luân");
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            textBox1_TextChanged(sender,e);
+        }
     }
 }

@@ -18,7 +18,7 @@ go
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	-- func tbHP: xem DSHP theo ma hoc vien + hoc ky de lap hoa don
-create function tbDSHP
+create or alter function tbDSHP
 (
 	@mahv char(8),
 	@mahk char(4)
@@ -26,10 +26,12 @@ create function tbDSHP
 returns table
 as
 return
-	select * from DangKy where MaHV = @mahv and MaHD is not null and left(MaLop, 4) = @mahk
+	select dk.MaHV, dk.MaLop, lh.MaMH, mh.MaNhomMH, dk.NgayDangKy, lh.HocPhi, dk.MaHD from DangKy dk left join Lop lh on dk.MaLop = lh.MaLop 
+	left join MonHoc mh on lh.MaMH = mh.MaMH
+	where dk.MaHV = @mahv and left(dk.MaLop, 4) = @mahk and dk.MaHD=null
 go
 
---select * from tbDSHP('HV000014', 'LOP0')
+--select * from tbDSHP('HV000004', '2101')
 --go
 
 --drop function tbDSHP
@@ -126,7 +128,7 @@ begin
 end
 go
 
---exec TraCuuDSHP 'HV000114', 'LOP0'
+--exec TraCuuDSHP 'HV000004', '21010001'
 --go
 
 ----------------------------------------------------------------------------------------------------------------------------
@@ -167,4 +169,19 @@ begin
 		raiserror (N'Học viên không tồn tại!', 16, 1)
 end
 go
+---------------------------------Tong HD return
+create or alter proc tongHD_return
+
+	@mahv char(8),
+	@mahk char(4),
+	@sum money output
+as 
+begin
+		declare @tong money
+		set @tong = (select sum(HocPhi) from tbDSHP(@mahv, @mahk) where MaHD = null)
+
+		return @tong
+end
+go
+
 

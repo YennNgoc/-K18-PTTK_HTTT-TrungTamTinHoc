@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.grid_PKT = new System.Windows.Forms.DataGridView();
             this.checked_HP = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.butt_Lop = new System.Windows.Forms.Button();
@@ -45,52 +41,6 @@
             this.tb_NMH = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grid_PKT)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(641, 208);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 20);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Hoc Ky";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(640, 175);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 20);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Khoa";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DisplayMember = "1";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
-            this.comboBox1.Location = new System.Drawing.Point(743, 205);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(112, 28);
-            this.comboBox1.TabIndex = 15;
-            this.comboBox1.Text = "1";
-            this.comboBox1.ValueMember = "1";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(742, 170);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(112, 26);
-            this.dateTimePicker1.TabIndex = 12;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // grid_PKT
             // 
@@ -121,7 +71,7 @@
             // 
             // butt_Lop
             // 
-            this.butt_Lop.Location = new System.Drawing.Point(644, 121);
+            this.butt_Lop.Location = new System.Drawing.Point(643, 252);
             this.butt_Lop.Name = "butt_Lop";
             this.butt_Lop.Size = new System.Drawing.Size(211, 39);
             this.butt_Lop.TabIndex = 9;
@@ -131,7 +81,7 @@
             // 
             // but_Diem
             // 
-            this.but_Diem.Location = new System.Drawing.Point(644, 72);
+            this.but_Diem.Location = new System.Drawing.Point(644, 149);
             this.but_Diem.Name = "but_Diem";
             this.but_Diem.Size = new System.Drawing.Size(211, 39);
             this.but_Diem.TabIndex = 10;
@@ -141,7 +91,7 @@
             // 
             // tb_MaHV
             // 
-            this.tb_MaHV.Location = new System.Drawing.Point(742, 271);
+            this.tb_MaHV.Location = new System.Drawing.Point(742, 117);
             this.tb_MaHV.Name = "tb_MaHV";
             this.tb_MaHV.Size = new System.Drawing.Size(112, 26);
             this.tb_MaHV.TabIndex = 21;
@@ -149,7 +99,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(640, 274);
+            this.label2.Location = new System.Drawing.Point(640, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 20);
             this.label2.TabIndex = 20;
@@ -158,7 +108,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(640, 242);
+            this.label1.Location = new System.Drawing.Point(641, 223);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 20);
             this.label1.TabIndex = 20;
@@ -166,14 +116,14 @@
             // 
             // tb_Lop
             // 
-            this.tb_Lop.Location = new System.Drawing.Point(742, 239);
+            this.tb_Lop.Location = new System.Drawing.Point(743, 220);
             this.tb_Lop.Name = "tb_Lop";
             this.tb_Lop.Size = new System.Drawing.Size(112, 26);
             this.tb_Lop.TabIndex = 21;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(644, 335);
+            this.button3.Location = new System.Drawing.Point(643, 368);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(211, 39);
             this.button3.TabIndex = 8;
@@ -184,7 +134,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(640, 306);
+            this.label3.Location = new System.Drawing.Point(641, 339);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 20);
             this.label3.TabIndex = 20;
@@ -192,7 +142,7 @@
             // 
             // tb_NMH
             // 
-            this.tb_NMH.Location = new System.Drawing.Point(742, 303);
+            this.tb_NMH.Location = new System.Drawing.Point(743, 336);
             this.tb_NMH.Name = "tb_NMH";
             this.tb_NMH.Size = new System.Drawing.Size(112, 26);
             this.tb_NMH.TabIndex = 21;
@@ -208,10 +158,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_MaHV);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.grid_PKT);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.butt_Lop);
@@ -227,11 +173,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridView grid_PKT;
         private System.Windows.Forms.DataGridViewCheckBoxColumn checked_HP;
         private System.Windows.Forms.Button butt_Lop;

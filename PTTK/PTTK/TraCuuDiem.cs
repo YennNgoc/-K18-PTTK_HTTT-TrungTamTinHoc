@@ -105,7 +105,7 @@ namespace PTTK
 
             if (String.IsNullOrWhiteSpace(tb_NMH.Text))
             {
-                MessageBox.Show("Nhap Ma Lop");
+                MessageBox.Show("Nhap Nhom Mon hoc");
                 return;
             }
 
