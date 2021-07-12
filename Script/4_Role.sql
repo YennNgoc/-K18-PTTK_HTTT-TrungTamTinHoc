@@ -17,6 +17,7 @@ GRANT SELECT ON NhomMonHoc TO HocVien, NVQL_LopHoc
 GRANT SELECT ON ChungChi TO HocVien, NVQL_LopHoc
 GRANT SELECT ON tbDiem TO HocVien, Phong_KhaoThi
 GRANT SELECT ON tbDSHPDiem TO ThuNgan
+GRANT SELECT ON NhanVien TO NVQL_LopHoc
 GRANT SELECT, INSERT, UPDATE, DELETE ON HoaDon TO ThuNgan
 
 -- EXEC HocVien - NVQL_HocVien
@@ -27,6 +28,7 @@ GRANT EXEC ON TraCuuDiem_HV TO HocVien
 GRANT EXEC ON DKHP TO HocVien
 GRANT EXEC ON TraCuuLSTN TO HocVien
 GRANT EXEC ON TraCuuDSLopMo TO HocVien
+GRANT EXEC ON TraCuuKQDK TO HocVien
 --------------------------------------
 GRANT EXEC ON ThemHV TO NVQL_HocVien
 GRANT EXEC ON XoaHV TO NVQL_HocVien
