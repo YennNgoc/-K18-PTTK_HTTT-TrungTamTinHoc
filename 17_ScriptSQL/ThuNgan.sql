@@ -28,10 +28,10 @@ as
 return
 	select dk.MaHV, dk.MaLop, lh.MaMH, mh.MaNhomMH, dk.NgayDangKy, lh.HocPhi, dk.MaHD from DangKy dk left join Lop lh on dk.MaLop = lh.MaLop 
 	left join MonHoc mh on lh.MaMH = mh.MaMH
-	where dk.MaHV = @mahv and left(dk.MaLop, 4) = @mahk and dk.MaHD=null
+	where dk.MaHV = @mahv and left(dk.MaLop, 4) = @mahk --and dk.MaHD=null
 go
 
---select * from tbDSHP('HV000004', '2101')
+--select * from tbDSHP('HV000004', '2102')
 --go
 
 --drop function tbDSHP
@@ -173,15 +173,19 @@ go
 create or alter proc tongHD_return
 
 	@mahv char(8),
-	@mahk char(4),
-	@sum money output
+	@mahk char(4)
+	--,@sum money output
 as 
 begin
-		declare @tong money
-		set @tong = (select sum(HocPhi) from tbDSHP(@mahv, @mahk) where MaHD = null)
+		--declare @tong money
+		select sum(HocPhi) from tbDSHP(@mahv, @mahk) where MaHD IS null
 
-		return @tong
+		--return @tong
 end
 go
+DECLARE @TONG MONEY
+exec tongHD_return '2102','HV000004'
+print (Tong)
 
-
+select sum(HocPhi) from tbDSHP('HV000004', '2102') where MaHD IS null
+DELETE FROM LichSuThi where MaHV='HV000001' and Diem=0

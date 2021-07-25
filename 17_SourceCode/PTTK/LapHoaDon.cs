@@ -34,8 +34,8 @@ namespace PTTK
             cmd2.CommandType = CommandType.StoredProcedure;
             cmd2.Parameters.Add("@mahv", SqlDbType.Char, 8).Value = tb_maHV.Text;
             cmd2.Parameters.Add("@mahk", SqlDbType.Char, 4).Value = tb_maHK.Text;
-            var returnParameter = cmd.Parameters.Add("@sum", SqlDbType.Int);
-            returnParameter.Direction = ParameterDirection.ReturnValue;
+            //var returnParameter = cmd2.Parameters.Add("@sum", SqlDbType.Money);
+            //returnParameter.Direction = ParameterDirection.Output;
             try
             {
                 cmd.ExecuteNonQuery();
@@ -43,9 +43,13 @@ namespace PTTK
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                dataGridView1.DataSource = dt;
+                dataGridView1.DataSource = dt; 
                 cmd2.ExecuteNonQuery();
-                textBox1.Text = returnParameter.Value.ToString();
+                SqlDataAdapter da2 = new SqlDataAdapter();
+                da2.SelectCommand = cmd2;
+                DataTable dt2 = new DataTable();
+                da2.Fill(dt2);
+                textBox1.Text = dt2.Rows[0].ItemArray[0].ToString();
             }
             catch (Exception ex)
             {

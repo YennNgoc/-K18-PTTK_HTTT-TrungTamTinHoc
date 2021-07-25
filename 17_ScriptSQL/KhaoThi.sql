@@ -244,7 +244,7 @@ begin
 					deallocate c
 				end
 				else
-					raiserror (N'Ngày thi phải từ ngày 21 --> 28 trong tháng!', 16, 1)
+					raiserror (N'Ngày thi không hợp lệ!', 16, 1)
 			end
 
 		end

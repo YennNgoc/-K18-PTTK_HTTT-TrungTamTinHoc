@@ -45,6 +45,7 @@ namespace PTTK
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
+                textBox1.Text = dt.Rows[0].ItemArray[5].ToString();
 
             }
             catch (Exception ex)
